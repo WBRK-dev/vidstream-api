@@ -11,3 +11,5 @@ app.use((req: any, res: Response, next: NextFunction) => { req.puppeteerManager 
 routes(app);
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+
+export default app;
