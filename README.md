@@ -12,6 +12,7 @@ This project includes:
 
 - [API Documentation](#api-documentation)
   - [GET Home Page](#get-home-page)
+  - [GET Search](#get-search)
   - [GET Movie Details](#get-movie-details)
   - [GET Movie Seasons](#get-movie-seasons)
   - [GET Movie Episodes](#get-movie-episodes)
@@ -97,6 +98,54 @@ This project includes:
     },
     { ... }
   ]
+}
+```
+
+</details>
+
+<details>
+  
+<summary>
+    
+### `GET` Search
+
+</summary>
+
+```
+/search?q={searchQuery}&page={pageIndex}
+```
+|       Parameter      |  Type  |             Description               | Required? | Default |
+| :------------------: | :----: | :-----------------------------------: | :-------: | :-----: |
+|     `searchQuery`    | string | The search string. E.g. "family guy". |    Yes    |   --    |
+|     `pageIndex`      | number | The index of the page.                |    No     |   1     |
+```javascript
+{
+  items: [
+    {
+      id: string,
+      title: string,
+      poster: string,
+      stats: {
+        duration: string,
+        rating: string,
+        year: string,
+      }
+    },
+    {
+      id: string,
+      title: string,
+      poster: string,
+      stats: {
+        seasons: string,
+        rating: string,
+      }
+    },
+    { ... }
+  ],
+  pagination: {
+    current: number,
+    total: number,
+  }
 }
 ```
 
