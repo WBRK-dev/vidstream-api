@@ -2,6 +2,7 @@ import { NextFunction, Request, Response, type Express } from 'express';
 
 import {
     getHomeController,
+    getMovieDetailsController,
     getMovieEpisodesController,
     getMovieSeasonsController,
     getMovieEpisodeServersController,
@@ -13,6 +14,8 @@ export default (app: Express) => {
     app.use(verboseMessageOnHit);
 
 	app.get('/home', (req: Request, res: Response) => catchExceptions(req, res, getHomeController));
+
+    app.get("/movie/:id", (req: Request, res: Response) => catchExceptions(req, res, getMovieDetailsController));
 
     app.get("/movie/:id/seasons", (req: Request, res: Response) => catchExceptions(req, res, getMovieSeasonsController));
     app.get("/movie/:id/episodes", (req: Request, res: Response) => catchExceptions(req, res, getMovieEpisodesController));
