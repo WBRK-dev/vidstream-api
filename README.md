@@ -11,6 +11,12 @@ This project includes:
 ## Contents
 
 - [API Documentation](#api-documentation)
+  - [GET Home Page](#get-home-page)
+  - [GET Movie Details](#get-movie-details)
+  - [GET Movie Seasons](#get-movie-seasons)
+  - [GET Movie Episodes](#get-movie-episodes)
+  - [GET Movie Episode Servers](#get-movie-episode-servers)
+  - [GET Movie Episode Sources](#get-movie-episode-sources)
 - [Contributors](#contributors)
 - [Special Thanks](#thanks-to-)
 
@@ -100,6 +106,58 @@ This project includes:
   
 <summary>
     
+### `GET` Movie Details
+
+</summary>
+
+```
+/movie/{movieId}
+```
+
+|     Parameter      |  Type  |             Description             | Required? | Default |
+| :----------------: | :----: | :---------------------------------: | :-------: | :-----: |
+|     `movieId`      | string | The movie id given in e.g. `/home`. |    Yes    |   --    |
+
+<p style="background-color: red; color: white;">episodeId is only available when type is equal to movie and only has one episode.</p>
+
+```javascript
+{
+  title: string,
+  description: string,
+  type: "movie" | "tvSeries",
+  stats: { name: string, value: string | string[] }[],
+  episodeId?: string,
+  related: [
+    {
+      id: string,
+      title: string,
+      poster: string,
+      stats: {
+        seasons: string,
+        rating: string,
+      }
+    },
+    {
+      id: string,
+      title: string,
+      poster: string,
+      stats: {
+        year: string,
+        duration: string,
+        rating: string,
+      }
+    },
+    { ... }
+  ]
+}
+```
+
+</details>
+
+<details>
+  
+<summary>
+    
 ### `GET` Movie Seasons
 
 </summary>
@@ -146,6 +204,71 @@ This project includes:
   },
   { ... }
 ]
+```
+
+</details>
+
+<details>
+
+<summary>
+    
+### `GET` Movie Episode Servers
+
+</summary>
+
+```
+/movie/{movieId}/servers?episodeId={episodeId}
+```
+|       Parameter      |  Type  |                        Description                        | Required? | Default |
+| :------------------: | :----: | :-------------------------------------------------------: | :-------: | :-----: |
+|      `movieId`       | string | The movie id given in e.g. `/home`.                       |    Yes    |   --    |
+|      `episodeId`     | string | The episode id given in e.g. `/movie/{movieId}/episodes`. |    Yes    |   --    |
+```javascript
+[
+  {
+    id: string,
+    name: string,
+  },
+  { ... }
+]
+```
+
+</details>
+
+<details>
+
+<summary>
+    
+### `GET` Movie Episode Sources
+
+</summary>
+
+```
+/movie/{movieId}/sources?serverId={serverId}
+```
+|      Parameter      |  Type  |                    Description                     | Required? | Default |
+| :-----------------: | :----: | :------------------------------------------------: | :-------: | :-----: |
+|     `movieId`       | string | The movie id given in e.g. `/home`.                |    Yes    |   --    |
+|     `serverId`      | string | The server id given in `/movie/{movieId}/servers`. |    Yes    |   --    |
+```javascript
+{
+  sources: [
+    {
+      src: string,
+      type: string,
+    },
+    { ... }   
+  ],
+  tracks: [
+    {
+      file: string,
+      label: string,
+      kind: string,
+      default?: string,
+    },
+    { ... }
+  ]
+}
 ```
 
 </details>
