@@ -1,7 +1,7 @@
 # Vidstream API
 This project includes:
-- An scraper for the website "vidstream.to"
-- An parser for the stream provider "rabbitstream.net"
+- A scraper for the website "vidstream.to"
+- A parser for the stream provider "rabbitstream.net"
 
 > [!IMPORTANT]
 >
