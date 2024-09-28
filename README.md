@@ -10,6 +10,7 @@ This project includes:
 
 ## Contents
 
+- [Installation](#installation)
 - [API Documentation](#api-documentation)
   - [GET Home Page](#get-home-page)
   - [GET Search](#get-search)
@@ -20,6 +21,21 @@ This project includes:
   - [GET Movie Episode Sources](#get-movie-episode-sources)
 - [Contributors](#contributors)
 - [Special Thanks](#thanks-to-)
+
+## Installation
+To get this project on your local machine run the following command.
+```
+git clone https://github.com/WBRK-dev/vidstream-api.git
+```
+After that go into the new directory and install all the dependencies.
+```
+npm install
+```
+When you are done with installing run the serve command.
+```
+npm start
+```
+Now the api is accessible through `localhost:4001`.
 
 ## API Documentation
 
