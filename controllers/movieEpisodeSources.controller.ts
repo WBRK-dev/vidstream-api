@@ -27,7 +27,8 @@ export default async function (req: any, res: Response) {
 
     switch (sourceProviderBaseUrl) {
         case SERVERS.RABBITSTREAM:
-            res.send(await RabbitStream(req.puppeteerManager, serverAjaxResponse.data.data.link));
+            const sourceId = (new URL(serverAjaxResponse.data.data.link)).pathname.split("/").pop();
+            res.send(await RabbitStream(sourceId));
             break;
         default:
             throw { name: "ParserNotFoundError", message: `Parser not found for provider '${sourceProviderBaseUrl}'` };
