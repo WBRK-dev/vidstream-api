@@ -234,13 +234,15 @@ Now the api is accessible through `localhost:4001`.
 | :----------------: | :----: | :---------------------------------: | :-------: | :-----: |
 |     `movieId`      | string | The movie id given in e.g. `/home`. |    Yes    |   --    |
 ```javascript
-[
-  {
-    id: string,
-    number: number,
-  },
-  { ... }
-]
+{
+  seasons: [
+    {
+      id: string,
+      number: number,
+    },
+    { ... }
+  ]
+}
 ```
 
 </details>
@@ -261,7 +263,8 @@ Now the api is accessible through `localhost:4001`.
 |     `movieId`       | string | The movie id given in e.g. `/home`.                |    Yes    |   --    |
 |     `seasonId`      | string | The season id given in `/movie/{movieId}/seasons`. |    Yes    |   --    |
 ```javascript
-[
+{
+  episodes: [
   {
     id: string,
     number: number,
@@ -269,6 +272,7 @@ Now the api is accessible through `localhost:4001`.
   },
   { ... }
 ]
+}
 ```
 
 </details>
@@ -289,13 +293,15 @@ Now the api is accessible through `localhost:4001`.
 |      `movieId`       | string | The movie id given in e.g. `/home`.                       |    Yes    |   --    |
 |      `episodeId`     | string | The episode id given in e.g. `/movie/{movieId}/episodes`. |    Yes    |   --    |
 ```javascript
-[
-  {
-    id: string,
-    name: string,
-  },
-  { ... }
-]
+{
+  servers: [
+    {
+      id: string,
+      name: string,
+    },
+    { ... }
+  ]
+}
 ```
 
 </details>
