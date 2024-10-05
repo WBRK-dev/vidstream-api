@@ -46,18 +46,12 @@ export default async function (req: Request, res: Response) {
         } else {
             stat.value = $(el).find(".value").text().trim();
         }
-        
 
         response.stats.push(stat);
     });
 
     $(".section-related .item").each((_, el) => {
-
-        console.log(_);
-        
-
         response.related.push(extractDetect($, el));
-
     });
 
     const axiosResponseLines = axiosResponse.data.split("\n");
