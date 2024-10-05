@@ -7,7 +7,9 @@ import { load, CheerioAPI } from "cheerio";
 
 // GET /movie/:id/episodes?seasonId=string
 export default async function (req: Request, res: Response) {
-    const response: Episode[] = [];
+    const response = {
+        episodes: [] as Episode[],
+    };
 
     const serverAjaxResponse = await axios.get(`${SRC_AJAX_URL}/movie/season/episodes/${req.query.seasonId}` as string, {
         headers: {
@@ -23,7 +25,7 @@ export default async function (req: Request, res: Response) {
     let $: CheerioAPI = load(serverAjaxResponse.data);
 
     $(".item a").each((_, el) => {
-        response.push({
+        response.episodes.push({
             id: $(el).attr("data-id") as string,
             number: parseInt($(el).find("strong").text().trim().split(" ")[1]),
             title: $(el).text().trim().split(" ").slice(2).join(" "),

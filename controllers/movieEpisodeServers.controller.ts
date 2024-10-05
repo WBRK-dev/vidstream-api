@@ -8,7 +8,9 @@ import { load, CheerioAPI } from "cheerio";
 
 // GET /movie/:id/servers?episodeId=string
 export default async function (req: Request, res: Response) {
-    const response: Server[] = [];
+    const response = {
+        servers: [] as Server[],
+    };
 
     const serverAjaxResponse = await axios.get(`${SRC_AJAX_URL}/movie/episode/servers/${req.query.episodeId}` as string, {
         headers: {
@@ -25,7 +27,7 @@ export default async function (req: Request, res: Response) {
 
     $(".dropdown-menu .dropdown-item").each((_, el) => {
         if (ALLOWED_EPISODE_SERVERS.filter(obj => obj === $(el).text().trim().toLowerCase())?.length === 0) return;
-        response.push({
+        response.servers.push({
             id: $(el).attr("data-id") as string,
             name: $(el).text().trim(),
         });
