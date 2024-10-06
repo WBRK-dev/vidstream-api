@@ -35,7 +35,7 @@ When you are done with installing run the serve command.
 ```
 npm start
 ```
-Now the api is accessible through `localhost:4001`.
+Now the api is accessible through `localhost:4030`.
 
 ## API Documentation
 
