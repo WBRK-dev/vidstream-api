@@ -10,6 +10,8 @@ const app = express();
 app.use(cors);
 routes(app);
 
+app.use("/", express.static("public"));
+
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
 export default app;
