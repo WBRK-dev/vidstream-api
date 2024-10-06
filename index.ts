@@ -1,10 +1,9 @@
-import express, { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 import { PORT } from './config/server';
 
+import app from './api/index';
 import routes from './routes';
-
-const app = express();
 
 routes(app);
 
