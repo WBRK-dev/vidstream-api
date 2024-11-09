@@ -8,6 +8,11 @@ This project includes:
 > 1. This API is just an unofficial api for [vidstream.to](https://vidstream.to) and is in no other way officially related to the same.
 > 2. The content that this api provides is not mine, nor is it hosted by me. These belong to their respective owners. This api just demonstrates how to build an api that scrapes websites and uses their content.
 
+> [!WARNING]
+>
+> Since Vidstream recently changed how the sources are encrypted, there is currently no way to decrypt episode sources.<br>
+> All the other routes remain functional.
+
 ## Contents
 
 - [Installation](#installation)
