@@ -25,13 +25,15 @@ export default async function (req: any, res: Response) {
     
     const sourceProviderBaseUrl = (new URL(serverAjaxResponse.data.data.link)).hostname;
 
-    switch (sourceProviderBaseUrl) {
-        case SERVERS.RABBITSTREAM:
+    // switch (sourceProviderBaseUrl) {
+    //     case SERVERS.RABBITSTREAM:
             const sourceId = (new URL(serverAjaxResponse.data.data.link)).pathname.split("/").pop();
-            res.send(await RabbitStream(sourceId));
-            break;
-        default:
-            throw { name: "ParserNotFoundError", message: `Parser not found for provider '${sourceProviderBaseUrl}'` };
-    }
+            console.log(sourceProviderBaseUrl, sourceId);
+            res.send(await RabbitStream(serverAjaxResponse.data.data.link, "https://vidstream.to"));
+            // break;
+        // default:
+  	    //     console.log(serverAjaxResponse);
+        //     throw { name: "ParserNotFoundError", message: `Parser not found for provider '${sourceProviderBaseUrl}'` };
+    // }
 
 }

@@ -16,6 +16,7 @@
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "image-pixels": "^2.2.2",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"
   },
