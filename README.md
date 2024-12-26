@@ -16,6 +16,7 @@ This project includes:
 ## Contents
 
 - [Installation](#installation)
+- [3rd Party Hosting](#3rd-party-hosting)
 - [API Documentation](#api-documentation)
   - [GET Home Page](#get-home-page)
   - [GET Search](#get-search)
@@ -23,7 +24,6 @@ This project includes:
   - [GET Movie Seasons](#get-movie-seasons)
   - [GET Movie Episodes](#get-movie-episodes)
   - [GET Movie Episode Servers](#get-movie-episode-servers)
-  - [GET Movie Episode Sources](#get-movie-episode-sources)
 - [Contributors](#contributors)
 - [Special Thanks](#thanks-to-)
 
@@ -41,6 +41,10 @@ When you are done with installing run the serve command.
 npm start
 ```
 Now the api is accessible through `localhost:4030`.
+
+## 3rd Party Hosting
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/WBRK-dev/vidstream-api)
 
 ## API Documentation
 
