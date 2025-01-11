@@ -10,8 +10,6 @@ import {
 
 // GET /movie/:id/sources?episodeId=string&serverId=string
 export default async function (req: any, res: Response) {
-    const response: EpisodeServerResponse = {};
-
     const serverAjaxResponse = await axios.get(`${SRC_AJAX_URL}/movie/episode/server/sources/${req.query.serverId}` as string, {
         headers: {
             "Alt-Used": "vidstream.to",
@@ -22,18 +20,6 @@ export default async function (req: any, res: Response) {
             Accept: ACCEPT_HEADER,
         },
     });
-    
-    const sourceProviderBaseUrl = (new URL(serverAjaxResponse.data.data.link)).hostname;
 
-    // switch (sourceProviderBaseUrl) {
-    //     case SERVERS.RABBITSTREAM:
-            const sourceId = (new URL(serverAjaxResponse.data.data.link)).pathname.split("/").pop();
-            console.log(sourceProviderBaseUrl, sourceId);
-            res.send(await RabbitStream(serverAjaxResponse.data.data.link, "https://vidstream.to"));
-            // break;
-        // default:
-  	    //     console.log(serverAjaxResponse);
-        //     throw { name: "ParserNotFoundError", message: `Parser not found for provider '${sourceProviderBaseUrl}'` };
-    // }
-
+    res.send(await RabbitStream(serverAjaxResponse.data.data.link, "https://vidstream.to"));
 }
