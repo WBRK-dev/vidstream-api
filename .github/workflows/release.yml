@@ -58,5 +58,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/wbrk-dev/aniwatch:${{ needs.changelog.outputs.tag }}-puppeteer
-            ghcr.io/wbrk-dev/aniwatch:latest-puppeteer
+            ghcr.io/wbrk-dev/vidstream-api:${{ needs.changelog.outputs.tag }}-puppeteer
+            ghcr.io/wbrk-dev/vidstream-api:latest-puppeteer
