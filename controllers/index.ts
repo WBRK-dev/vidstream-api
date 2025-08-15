@@ -5,6 +5,8 @@ import getMovieSeasonsController from './movieSeasons.controller';
 import getMovieEpisodesController from './movieEpisodes.controller';
 import getMovieEpisodeServersController from './movieEpisodeServers.controller';
 import getMovieEpisodeSourcesController from './movieEpisodeSources.controller';
+import proxyHlsController from './proxyHls.controller';
+import proxyVttController from './proxyVtt.controller';
 
 export { 
     getHomeController, 
@@ -13,5 +15,7 @@ export {
     getMovieSeasonsController, 
     getMovieEpisodesController, 
     getMovieEpisodeServersController, 
-    getMovieEpisodeSourcesController 
+    getMovieEpisodeSourcesController,
+    proxyHlsController,
+    proxyVttController,
 };

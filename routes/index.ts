@@ -7,7 +7,9 @@ import {
     getMovieEpisodesController,
     getMovieSeasonsController,
     getMovieEpisodeServersController,
-    getMovieEpisodeSourcesController
+    getMovieEpisodeSourcesController,
+    proxyHlsController,
+    proxyVttController,
 } from "../controllers/index";
 
 export default (app: Express) => {
@@ -26,6 +28,8 @@ export default (app: Express) => {
     app.get("/movie/:id/servers", (req: Request, res: Response) => catchExceptions(req, res, getMovieEpisodeServersController));
     app.get("/movie/:id/sources", (req: Request, res: Response) => catchExceptions(req, res, getMovieEpisodeSourcesController));
 
+    app.get("/proxy/hls", (req: Request, res: Response) => catchExceptions(req, res, proxyHlsController));
+    app.get("/proxy/vtt", (req: Request, res: Response) => catchExceptions(req, res, proxyVttController));
 }
 
 async function catchExceptions(req: Request, res: Response, fn: (req: Request, res: Response) => any) {
