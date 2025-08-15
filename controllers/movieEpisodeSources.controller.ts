@@ -4,6 +4,7 @@ import { USER_AGENT_HEADER, ACCEPT_ENCODING_HEADER, ACCEPT_HEADER, SRC_AJAX_URL 
 import axios from "axios";
 import puppeteer from "puppeteer";
 import { EpisodeSourcesResponse } from "../types/controllers/movieEpisodeSources";
+import { EXECUTABLE_PATH } from "../config/puppeteer";
 
 // GET /movie/:id/sources?episodeId=string&serverId=string
 export default async function (req: Request, res: Response) {
@@ -24,7 +25,7 @@ export default async function (req: Request, res: Response) {
 
     const browser = await puppeteer.launch({
         browser: 'firefox',
-        executablePath: '/usr/bin/firefox',
+        executablePath: EXECUTABLE_PATH,
     });
 
     const page = await browser.newPage();
