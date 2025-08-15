@@ -21,7 +21,7 @@ jobs:
         with:
           skip-on-empty: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          tag-prefix: ''
+          tag-prefix: 'p'
           version-file: './package.json'
 
       - name: Create release
