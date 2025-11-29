@@ -22,8 +22,8 @@ export default async function (req: Request, res: Response) {
             'upgrade-insecure-requests': '1',
             'sec-fetch-dest': 'empty',
             'sec-fetch-mode': 'cors',
-            'referer': 'https://streameeeeee.site/',
-            'origin': 'https://streameeeeee.site',
+            'referer': 'https://videostr.net/',
+            'origin': 'https://videostr.net',
             'host': Url.host,
         }
     });

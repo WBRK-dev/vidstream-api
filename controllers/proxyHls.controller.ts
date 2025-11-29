@@ -29,8 +29,8 @@ async function m3u8(url: string, req: Request, res: Response) {
             'upgrade-insecure-requests': '1',
             'sec-fetch-dest': 'empty',
             'sec-fetch-mode': 'cors',
-            'referer': 'https://streameeeeee.site/',
-            'origin': 'https://streameeeeee.site',
+            'referer': 'https://videostr.net/',
+            'origin': 'https://videostr.net',
             'host': Url.host,
         }
     });
@@ -56,7 +56,7 @@ async function m3u8(url: string, req: Request, res: Response) {
         res.setHeader(key, value);
     }
     res.setHeader('access-control-allow-origin', '*');
-    res.setHeader('content-type', 'application/X-mpegURL');
+    //res.setHeader('content-type', 'application/X-mpegURL');
 
     res.send(responseBody);
 }
@@ -75,8 +75,8 @@ async function handleResourceRequest(url, req, res) {
             'upgrade-insecure-requests': '1',
             'sec-fetch-dest': 'empty',
             'sec-fetch-mode': 'cors',
-            'referer': 'https://streameeeeee.site/',
-            'origin': 'https://streameeeeee.site',
+            'referer': 'https://videostr.net/',
+            'origin': 'https://videostr.net',
             'host': Url.host,
         }
     });
